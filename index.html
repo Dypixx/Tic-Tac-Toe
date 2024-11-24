@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-800 text-white relative">
+    <div class="w-full max-w-sm mx-auto">
+        <div id="playerInfo" class="text-center mb-6">
+            <div class="flex justify-between items-center mb-4">
+                <div id="playerX" class="flex flex-col items-center">
+                    <img id="playerXImage" class="w-16 h-16 rounded-full border-2 border-blue-500"
+                        src="https://via.placeholder.com/64?text=P1" alt="Player X" />
+                    <p id="playerXName" class="text-blue-400 text-lg font-bold mt-2">Player 1</p>
+                </div>
+                <div id="playerO" class="flex flex-col items-center">
+                    <img id="playerOImage" class="w-16 h-16 rounded-full border-2 border-red-500"
+                        src="https://via.placeholder.com/64?text=P2" alt="Player O" />
+                    <p id="playerOName" class="text-red-400 text-lg font-bold mt-2">Player 2</p>
+                </div>
+            </div>
+        </div>
+        <div id="gameBoard" class="grid grid-cols-3 gap-4">
+        </div>
+        <button id="resetButton" class="mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Reset
+            Game</button>
+    </div>
+    <div id="winnerPopup"
+        class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md flex justify-center items-center hidden">
+        <div class="bg-white text-gray-800 rounded-lg shadow-lg p-6 w-80 text-center">
+            <h2 id="winnerMessage" class="text-2xl font-bold mb-4"></h2>
+            <button id="restartGameButton"
+                class="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">OK</button>
+        </div>
+    </div>
+    <div id="startPopup" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md flex justify-center items-center">
+        <div class="bg-white text-gray-800 rounded-lg shadow-lg p-6 w-96">
+            <h2 class="text-2xl font-bold text-center mb-4">Welcome to Tic Tac Toe</h2>
+            <p class="text-center text-gray-600 mb-6">Set player names to start the game.</p>
+            <div class="mb-4">
+                <label class="block font-semibold">Player 1 Name:</label>
+                <input id="inputPlayerXName" type="text" class="w-full p-2 border rounded"
+                    placeholder="Enter Player 1 Name" />
+            </div>
+            <div class="mb-4">
+                <label class="block font-semibold">Player 2 Name:</label>
+                <input id="inputPlayerOName" type="text" class="w-full p-2 border rounded"
+                    placeholder="Enter Player 2 Name" />
+            </div>
+            <button id="startGameButton"
+                class="mt-4 w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">Start Game</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
